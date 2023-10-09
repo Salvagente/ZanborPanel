@@ -34,11 +34,11 @@ colorized_echo() {
     esac
 }
 
-colorized_echo green "\n[+] - Please wait for a few hours, the bee panel robot is being installed. . ."
+colorized_echo green "\n[+] - Пожалуйста, подождите несколько часов, идет установка робота-панели пчел.. . ."
 
 # update proccess !
 sudo apt update && apt upgrade -y
-colorized_echo green "The server was successfully updated . . .\n"
+colorized_echo green "Сервер успешно обновлен . . .\n"
 
 # install packages !
 PACKAGES=(
@@ -53,7 +53,7 @@ PACKAGES=(
     php-curl 
 )
 
-colorized_echo green " Installing the necessary packages. . ."
+colorized_echo green " Установка необходимых пакетов. . ."
 
 for i in "${PACKAGES[@]}"
     do
