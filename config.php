@@ -493,7 +493,7 @@ if ($from_id == $config['dev']) {
             [['text' => '🔧 Управление']],
             [['text' => '🛍 Мои услуги'], ['text' => '🛒 Служба покупки']],
             [['text' => '🎁 Тестовый сервис (бесплатно)']],
-            [['text' => '👤 профиль'], ['text' => '🛒 Вы знаете услуги'], ['text' => '💸 Пополнить счет']],
+            [['text' => '👤 профиль'], ['text' => '🛒 Вы знаете услуги'], ['text' => '💸Пополнить счет']],
             [['text' => '🔗 Руководство по подключению'], ['text' => '📮 онлайн поддержка']]
         ], 'resize_keyboard' => true]);
     } else {
@@ -514,9 +514,9 @@ if ($from_id == $config['dev']) {
         ], 'resize_keyboard' => true]);
     } else {
         $start_key = json_encode(['keyboard' => [
-            [['text' => '🛍 Мои услуги'], ['text' => '🛒Служба покупки']],
+            [['text' => '🛍 Мои услуги'], ['text' => '🛒 Служба покупки']],
             [['text' => '👤 профиль'], ['text' => '🛒 Вы знаете услуги'], ['text' => '💸 Пополнить счет']],
-            [['text' => '🔗Руководство по подключению'], ['text' => '📮 онлайн поддержка']]
+            [['text' => '🔗 Руководство по подключению'], ['text' => '📮 онлайн поддержка']]
         ], 'resize_keyboard' => true]);
     }
 }
@@ -573,105 +573,105 @@ $manage_server = json_encode(['keyboard' => [
 ], 'resize_keyboard' => true]);
 
 $select_panel = json_encode(['inline_keyboard' => [
-    [['text' => '▫سنایی', 'callback_data' => 'sanayi']],
-    [['text' => '▫️هیدیفای', 'callback_data' => 'hedifay'], ['text' => '▫️مرزبان', 'callback_data' => 'marzban']]
+    [['text' => '▫Сенай', 'callback_data' => 'sanayi']],
+    [['text' => '▫️Скрыть', 'callback_data' => 'hedifay'], ['text' => '▫️пограничник', 'callback_data' => 'marzban']]
 ]]);
 
 $add_plan_button = json_encode(['inline_keyboard' => [
-    [['text' => '➕ پلن خرید سرویس', 'callback_data' => 'add_buy_plan']],
-    [['text' => '➕ پلن زمانی', 'callback_data' => 'add_date_plan'], ['text' => '➕ پلن حجمی', 'callback_data' => 'add_limit_plan']],
+    [['text' => '➕ План покупки услуги', 'callback_data' => 'add_buy_plan']],
+    [['text' => '➕ план времени', 'callback_data' => 'add_date_plan'], ['text' => '➕ план объема', 'callback_data' => 'add_limit_plan']],
 ]]);
 
 $manage_plans = json_encode(['inline_keyboard' => [
-    [['text' => '🔧 پلن خرید سرویس', 'callback_data' => 'manage_main_plan']],
-    [['text' => '🔧 پلن زمانی', 'callback_data' => 'manage_date_plan'], ['text' => '🔧 پلن حجمی', 'callback_data' => 'manage_limit_plan']],
+    [['text' => '🔧 План покупки услуги', 'callback_data' => 'manage_main_plan']],
+    [['text' => '🔧 план времени', 'callback_data' => 'manage_date_plan'], ['text' => '🔧 план объема', 'callback_data' => 'manage_limit_plan']],
 ]]);
 
 $end_inbound = json_encode(['keyboard' => [
-    [['text' => '✔ اتمام و ثبت']],
+    [['text' => '✔ Завершение и регистрация']],
 ], 'resize_keyboard' => true]);
 
 $manage_test_account = json_encode(['inline_keyboard' => [
-    [['text' => ($test_account_setting['status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_test_account_status'], ['text' => '▫️وضعیت :', 'callback_data' => 'null']],
-    [['text' => ($test_account_setting['panel'] == 'none') ? '🔴 وصل نیست' : '🟢 وصل است', 'callback_data' => 'change_test_account_panel'], ['text' => '▫️متصل به پنل :', 'callback_data' => 'null']],
-    [['text' => $sql->query("SELECT * FROM `test_account`")->num_rows, 'callback_data' => 'null'], ['text' => '▫️تعداد اکانت تست :', 'callback_data' => 'null']],
-    [['text' => $test_account_setting['volume'] . ' GB', 'callback_data' => 'change_test_account_volume'], ['text' => '▫️حجم :', 'callback_data' => 'null']],
-    [['text' => $test_account_setting['time'] . ' ساعت', 'callback_data' => 'change_test_account_time'], ['text' => '▫️زمان :', 'callback_data' => 'null']],
+    [['text' => ($test_account_setting['status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_test_account_status'], ['text' => '▫️Состояние :', 'callback_data' => 'null']],
+    [['text' => ($test_account_setting['panel'] == 'none') ? '🔴Не подключенТ': '🟢 подключен', 'callback_data' => 'change_test_account_panel'], ['text' => '▫️подключен к панели :', 'callback_data' => 'null']],
+    [['text' => $sql->query("SELECT * FROM `test_account`")->num_rows, 'callback_data' => 'null'], ['text' => '▫️Количество тестовых аккаунтов :', 'callback_data' => 'null']],
+    [['text' => $test_account_setting['volume'] . ' GB', 'callback_data' => 'change_test_account_volume'], ['text' => 'Объем :', 'callback_data' => 'null']],
+    [['text' => $test_account_setting['time'] . ' часы', 'callback_data' => 'change_test_account_time'], ['text' => '▫️Время :', 'callback_data' => 'null']],
 ]]);
 
 $manage_auth = json_encode(['inline_keyboard' => [
-    [['text' => ($auth_setting['status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_auth'], ['text' => 'ℹ️ سیستم احرازهویت :', 'callback_data' => 'null']],
-    [['text' => ($auth_setting['iran_number'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_auth_iran'], ['text' => '🇮🇷 شماره ایران :', 'callback_data' => 'null']],
-    [['text' => ($auth_setting['virtual_number'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_auth_virtual'], ['text' => '🏴󠁧󠁢󠁥󠁮󠁧󠁿 شماره مجازی :', 'callback_data' => 'null']],
-    [['text' => ($auth_setting['both_number'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_auth_all_country'], ['text' => '🌎 همه شماره ها :', 'callback_data' => 'null']],
+    [['text' => ($auth_setting['status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_auth'], ['text' => 'ℹ️ Система аутентификации :', 'callback_data' => 'null']],
+    [['text' => ($auth_setting['iran_number'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_auth_iran'], ['text' => '🇮🇷 Иранский номер :', 'callback_data' => 'null']],
+    [['text' => ($auth_setting['virtual_number'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_auth_virtual'], ['text' => '🏴󠁧󠁢󠁥󠁮󠁧󠁿 виртуальный номер :', 'callback_data' => 'null']],
+    [['text' => ($auth_setting['both_number'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_auth_all_country'], ['text' => '🌎 Все номера :', 'callback_data' => 'null']],
 ]]);
 
 $manage_service = json_encode(['keyboard' => [
     [['text' => '#⃣ لیست همه سرویس ها']],
-    [['text' => '➖ حذف سرویس'], ['text' => '➕ افزودن سرویس']],
-    [['text' => 'ℹ️ اطلاعات یک سرویس']],
-    [['text' => '⬅️ بازگشت به مدیریت']]
+    [['text' => '➖ Удалить услугу'], ['text' => '➕ Добавить услугу']],
+    [['text' => 'ℹ️ Информация об услуге']],
+    [['text' => '⬅️ Вернуться к управлению']]
 ], 'resize_keyboard' => true]);
 
 $manage_message = json_encode(['keyboard' => [
-    [['text' => '🔎 وضعیت ارسال / فوروارد همگانی']],
-    [['text' => '📬 فوروارد همگانی'], ['text' => '📬 ارسال همگانی']],
-    [['text' => '📞 ارسال پیام به کاربر']],
-    [['text' => '⬅️ بازگشت به مدیریت']]
+    [['text' => '🔎 Статус отправки / Общественный форвард']],
+    [['text' => '📬 Общественный форвард'], ['text' => '📬 Публичная публикация']],
+    [['text' => '📞 Отправить сообщение пользователю']],
+    [['text' => '⬅️ Вернуться к управлению']]
 ], 'resize_keyboard' => true]);
 
 $manage_user = json_encode(['keyboard' => [
-    [['text' => '🔎 اطلاعات کاربر']],
-    [['text' => '➖ کسر موجودی'], ['text' => '➕ افزایش موجودی']],
-    [['text' => '❌ مسدود کردن'], ['text' => '✅ آزاد کردن']],
-    [['text' => '📤 ارسال پیام به کاربر']],
-    [['text' => '⬅️ بازگشت به مدیریت']]
+    [['text' => '🔎 Информация о пользователе']],
+    [['text' => '➖ Вычет инвентаря'], ['text' => '➕ Увеличение запасов']],
+    [['text' => '❌ блокировать'], ['text' => '✅ бесплатно']],
+    [['text' => '📤 Отправить сообщение пользователю']],
+    [['text' => '⬅️ Вернуться к управлению']]
 ], 'resize_keyboard' => true]);
 
 $manage_admin = json_encode(['keyboard' => [
-    [['text' => '➖ حذف ادمین'], ['text' => '➕ افزودن ادمین']],
-    [['text' => '⚙️ لیست ادمین ها']],
-    [['text' => '⬅️ بازگشت به مدیریت']]
+    [['text' => '➖ Удалить администратора'], ['text' => '➕ Добавить администратора']],
+    [['text' => '⚙️ Список администраторов']],
+    [['text' => '⬅️ Вернуться к управлению']]
 ], 'resize_keyboard' => true]);
 
 $manage_setting = json_encode(['keyboard' => [
-    [['text' => '🚫 مدیریت ضد اسپم']],
-    [['text' => '◽کانال ها'], ['text' => '◽بخش ها']],
-    [['text' => '◽تنظیم متون ربات'], ['text' => '◽تنظیمات درگاه پرداخت']],
-    [['text' => '🎁 مدیریت کد تخفیف']],
-    [['text' => '⬅️ بازگشت به مدیریت']]
+    [['text' => '🚫 Управление антиспамом']],
+    [['text' => '◽каналы'], ['text' => '◽Разделы']],
+    [['text' => '◽Установить тексты бота'], ['text' => '◽Настройки платежного шлюза']],
+    [['text' => '🎁 Управление кодами скидок']],
+    [['text' => '⬅️ Вернуться к управлению']]
 ], 'resize_keyboard' => true]);
 
 $manage_copens = json_encode(['inline_keyboard' => [
-    [['text' => '➕افزودن تخفیف', 'callback_data' => 'add_copen'], ['text' => '✏️ مدیریت', 'callback_data' => 'manage_copens']]
+    [['text' => '➕Добавить скидку', 'callback_data' => 'add_copen'], ['text' => '✏️ Управление', 'callback_data' => 'manage_copens']]
 ]]);
 
 $manage_spam = json_encode(['inline_keyboard' => [
-    [['text' => ($spam_setting['status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_spam'], ['text' => '▫️وضعیت :', 'callback_data' => 'null']],
-    [['text' => ($spam_setting['type'] == 'ban') ? '🚫 مسدود' : '⚠️ اخطار', 'callback_data' => 'change_type_spam'], ['text' => '▫️مدل برخورد :', 'callback_data' => 'null']],
-    [['text' => $spam_setting['time'] . ' ثانیه', 'callback_data' => 'change_time_spam'], ['text' => '▫️زمان : ', 'callback_data' => 'null']],
-    [['text' => $spam_setting['count_message'] . ' عدد', 'callback_data' => 'change_count_spam'], ['text' => '▫️تعداد پیام : ', 'callback_data' => 'null']],
+    [['text' => ($spam_setting['status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_spam'], ['text' => '▫️ Статус :', 'callback_data' => 'null']],
+    [['text' => ($spam_setting['type'] == 'ban') ? '🚫заблокирован' : '⚠️Предупреждение', 'callback_data' => 'change_type_spam'], ['text' => '▫️ Модель столкновения :', 'callback_data' => 'null']],
+    [['text' => $spam_setting['time'] . ' Второй', 'callback_data' => 'change_time_spam'], ['text' => 'Время : ', 'callback_data' => 'null']],
+    [['text' => $spam_setting['count_message'] . 'число', 'callback_data' => 'change_count_spam'], ['text' => '▫️Количество сообщений : ', 'callback_data' => 'null']],
 ]]);
 
 $manage_payment = json_encode(['keyboard' => [
-    [['text' => '✏️ وضعیت خاموش/روشن درگاه پرداخت های ربات']],
-    [['text' => '▫️تنظیم صاحب شماره کارت'], ['text' => '▫️تنظیم شماره کارت']],
-    [['text' => '▫️زرین پال'], ['text' => '▫️آیدی پی']],
+    [['text' => '✏️ Статус отключения/включения платежного шлюза бота']],
+    [['text' => '▫️Установить владельца номера карты], ['text' => '▫️Установка номера карты']],
+    [['text' => '▫️Зарин Пал'], ['text' => '▫️Идентификатор Р']],
     [['text' => '◽ NOWPayments']],
-    [['text' => '⬅️ بازگشت به مدیریت']]
+    [['text' => '⬅️Вернуться к управлению']]
 ], 'resize_keyboard' => true]);
 
 $manage_off_on_paymanet = json_encode(['inline_keyboard' => [
-    [['text' => ($payment_setting['zarinpal_status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_zarinpal'], ['text' => '▫️زرین پال :', 'callback_data' => 'null']],
-    [['text' => ($payment_setting['idpay_status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_idpay'], ['text' => '▫️آیدی پی :', 'callback_data' => 'null']],
+    [['text' => ($payment_setting['zarinpal_status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_zarinpal'], ['text' => '▫️Зарин Пал :', 'callback_data' => 'null']],
+    [['text' => ($payment_setting['idpay_status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_idpay'], ['text' => 'Идентификатор Р :', 'callback_data' => 'null']],
     [['text' => ($payment_setting['nowpayment_status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_nowpayment'], ['text' => ': nowpayment ▫️', 'callback_data' => 'null']],
-    [['text' => ($payment_setting['card_status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_card'], ['text' => '▫️کارت به کارت :', 'callback_data' => 'null']]
+    [['text' => ($payment_setting['card_status'] == 'active') ? '🟢' : '🔴', 'callback_data' => 'change_status_card'], ['text' => '▫️Карта за картой:', 'callback_data' => 'null']]
 ]]);
 
 $manage_texts = json_encode(['keyboard' => [
-    [['text' => '✏️ متن تعرفه خدمات'], ['text' => '✏️ متن استارت']],
-    [['text' => '✏️ متن راهنمای اتصال']],
-    [['text' => '⬅️ بازگشت به مدیریت']]
+    [['text' => '✏️ Текст тарифа услуги'], ['text' => '✏️Начальный текст']],
+    [['text' => '✏️ Текст руководства по подключению']],
+    [['text' => '⬅️ Вернуться к управлению']]
 ], 'resize_keyboard' => true]);
 
 $set_text_edu = json_encode(['inline_keyboard' => [
@@ -681,33 +681,33 @@ $set_text_edu = json_encode(['inline_keyboard' => [
 ]]);
 
 $cancel = json_encode(['keyboard' => [
-    [['text' => '❌ انصراف']]
+    [['text' => '❌ уклоняться']]
 ], 'resize_keyboard' => true]);
 
 $cancel_add_server = json_encode(['keyboard' => [
-    [['text' => '❌ انصراف و بازگشت']]
+    [['text' => '❌ Отмена и возврат']]
 ], 'resize_keyboard' => true]);
 
 $back_panel = json_encode(['keyboard' => [
-    [['text' => '⬅️ بازگشت به مدیریت']]
+    [['text' => '⬅️ Вернуться к управлению']]
 ], 'resize_keyboard' => true]);
 
 $back_panellist = json_encode(['inline_keyboard' => [
-    [['text' => '🔙 بازگشت به لیست پنل ها', 'callback_data' => 'back_panellist']],
+    [['text' => '🔙 Вернуться к списку панелей', 'callback_data' => 'back_panellist']],
 ]]);
 
 $back_services = json_encode(['inline_keyboard' => [
-    [['text' => '🔙 بازگشت', 'callback_data' => 'back_services']]
+    [['text' => '🔙 возвращается', 'callback_data' => 'back_services']]
 ]]);
 
 $back_account_test = json_encode(['inline_keyboard' => [
-    [['text' => '🔙 بازگشت', 'callback_data' => 'back_account_test']]
+    [['text' => '🔙 возвращается', 'callback_data' => 'back_account_test']]
 ]]);
 
 $back_spam = json_encode(['inline_keyboard' => [
-    [['text' => '🔙 بازگشت', 'callback_data' => 'back_spam']]
+    [['text' => '🔙 возвращается', 'callback_data' => 'back_spam']]
 ]]);
 
 $back_copen = json_encode(['inline_keyboard' => [
-    [['text' => '🔙 بازگشت', 'callback_data' => 'back_copen']]
+    [['text' => '🔙 возвращается', 'callback_data' => 'back_copen']]
 ]]);
